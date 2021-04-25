@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "vtorye-bliuda-sosiska-kartofel-doski-tarelka-eda.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

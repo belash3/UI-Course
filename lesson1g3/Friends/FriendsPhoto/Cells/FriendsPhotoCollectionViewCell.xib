@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FriendsPhotoCollectionViewCell" customModule="lesson1g3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="432"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="369" height="432"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Emy-R5-SL1">
+                        <rect key="frame" x="34.5" y="66" width="300" height="300"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="300" id="LlO-XE-Qey"/>
+                            <constraint firstAttribute="width" constant="300" id="odw-Lp-a3x"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3OC-yj-lwf">
+                        <rect key="frame" x="159.5" y="371" width="50" height="41"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFg-dg-9YJ">
+                                <rect key="frame" x="0.0" y="0.0" width="25" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUj-Ny-e49" userLabel="LikeButton">
+                                <rect key="frame" x="25" y="0.0" width="25" height="41"/>
+                                <state key="normal" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="likeButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Qka-3O-L07"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="vne-y7-aDL"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Emy-R5-SL1" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="8aB-TK-jQI"/>
+                <constraint firstItem="3OC-yj-lwf" firstAttribute="top" secondItem="Emy-R5-SL1" secondAttribute="bottom" constant="5" id="Fx6-8R-Ovi"/>
+                <constraint firstItem="3OC-yj-lwf" firstAttribute="centerX" secondItem="Emy-R5-SL1" secondAttribute="centerX" id="PSK-wj-sD6"/>
+                <constraint firstAttribute="bottom" secondItem="3OC-yj-lwf" secondAttribute="bottom" constant="20" id="kco-TX-j4u"/>
+                <constraint firstItem="Emy-R5-SL1" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="mtM-Nw-xCy"/>
+            </constraints>
+            <size key="customSize" width="510" height="503"/>
+            <connections>
+                <outlet property="likeButton" destination="qUj-Ny-e49" id="mZa-Qn-c6k"/>
+                <outlet property="likeLabel" destination="ZFg-dg-9YJ" id="DCf-HQ-pOT"/>
+                <outlet property="photoUIView" destination="Emy-R5-SL1" id="IKQ-Rc-ee4"/>
+            </connections>
+            <point key="canvasLocation" x="215.21739130434784" y="198.88392857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+    </resources>
+</document>

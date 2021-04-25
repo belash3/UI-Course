@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "BFE57DB2-6ACE-483C-92AC-C528A59864C9"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0B840CF-F3C1-4B3B-B222-64FCC86338AB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lesson1g3/ReccCommunitiesTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "ReccCommunitiesTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "D0B840CF-F3C1-4B3B-B222-64FCC86338AB - a6b915e1f9cc8cd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lesson1g3.ReccCommunitiesTableViewController.popUpLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "lesson1g3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergeybelyakov/Documents/lesson2/lesson1g3/ReccCommunitiesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "D0B840CF-F3C1-4B3B-B222-64FCC86338AB - f5ca875d412728e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lesson1g3.ReccCommunitiesTableViewController.popUpLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "lesson1g3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergeybelyakov/Documents/lesson2/lesson1g3/ReccCommunitiesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "D0B840CF-F3C1-4B3B-B222-64FCC86338AB - 8b9f96af1d832849"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lesson1g3.ReccCommunitiesTableViewController.popUpLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "lesson1g3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergeybelyakov/Documents/lesson2/lesson1g3/ReccCommunitiesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "D0B840CF-F3C1-4B3B-B222-64FCC86338AB - 51214b713c6da998"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lesson1g3.ReccCommunitiesTableViewController.popUpLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "lesson1g3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergeybelyakov/Documents/lesson2/lesson1g3/ReccCommunitiesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "D0B840CF-F3C1-4B3B-B222-64FCC86338AB - a1f64c55e7c37bb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lesson1g3.ReccCommunitiesTableViewController.init(style: __C.UITableViewStyle) -&gt; lesson1g3.ReccCommunitiesTableViewController"
+                  moduleName = "lesson1g3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergeybelyakov/Documents/lesson2/lesson1g3/ReccCommunitiesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "304">
+               </Location>
+               <Location
+                  uuid = "D0B840CF-F3C1-4B3B-B222-64FCC86338AB - e94aa0154be8b87a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lesson1g3.ReccCommunitiesTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; lesson1g3.ReccCommunitiesTableViewController"
+                  moduleName = "lesson1g3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergeybelyakov/Documents/lesson2/lesson1g3/ReccCommunitiesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "336">
+               </Location>
+               <Location
+                  uuid = "D0B840CF-F3C1-4B3B-B222-64FCC86338AB - 28f48d6d698acafe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lesson1g3.ReccCommunitiesTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;lesson1g3.ReccCommunitiesTableViewController&gt;"
+                  moduleName = "lesson1g3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sergeybelyakov/Documents/lesson2/lesson1g3/ReccCommunitiesTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "304">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "48397FCF-8817-4A0F-A77A-D3C8EF36CB8A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lesson1g3/Friends/MyFriendsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
