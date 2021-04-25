@@ -13,7 +13,7 @@ class MyFriendsTableViewController: UITableViewController {
     
     var photoGlryindex: IndexPath = []
     var firstNameLettersArray = [String]()
-    var usersDict = [String: [String]]()
+    var usersDict = [String: [User]]()
     var userSectionTitles = [String]()
     
     
@@ -63,13 +63,13 @@ class MyFriendsTableViewController: UITableViewController {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: myCustomTableViewCellReuse, for: indexPath) as? MyCustomTableViewCell
         else {return UITableViewCell()}
+        
         let usersKey = userSectionTitles[indexPath.section]
         
-        for user in DataStorage.shared.usersArray {
-            if usersKey == user.name.prefix(1) {
-                cell.configureUser(user: user)
-            }
+        if let usersValues = usersDict[usersKey] {
+            cell.configureUser(user: usersValues[indexPath.row])
         }
+
         return cell
     }
     
@@ -98,15 +98,7 @@ class MyFriendsTableViewController: UITableViewController {
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        
-        for index in DataStorage.shared.usersArray {
-            let username = index.name
-            if !firstNameLettersArray.contains(String(username.prefix(1))) {
-                firstNameLettersArray.append(String(username.prefix(1)))
-            }
-        }
-        firstNameLettersArray.sort {$0 < $1}
-        return firstNameLettersArray
+        return userSectionTitles
     }
     
     
@@ -135,20 +127,20 @@ class MyFriendsTableViewController: UITableViewController {
     
     func createUsersDictionary() {
         
-        var namesArray = [String]()
+        var usersArray = [User]()
         for user in DataStorage.shared.usersArray {
-            namesArray.append(user.name)
+            usersArray.append(user)
         }
         
-        for name in namesArray {
-            let firstLetterIndex = name.index(name.startIndex, offsetBy: 1)
-            let nameKey = String(name[..<firstLetterIndex])
+        for user in usersArray {
+            let firstLetterIndex = user.name.index(user.name.startIndex, offsetBy: 1)
+            let userKey = String(user.name[..<firstLetterIndex])
             
-            if var nameValues = usersDict[nameKey] {
-                nameValues.append(name)
-                usersDict[nameKey] = nameValues
+            if var usersValues = usersDict[userKey] {
+                usersValues.append(user)
+                usersDict[userKey] = usersValues
             } else {
-                usersDict[nameKey] = [name]
+                usersDict[userKey] = [user]
             }
         }
         
