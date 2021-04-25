@@ -22,7 +22,6 @@ class MyFriendsTableViewController: UITableViewController {
     @IBOutlet weak var popUpLabel: UILabel!
     
     @IBAction func shwPhotoGllryButton(_ sender: Any) {
-        
         guard let cell = tableView.cellForRow(at: photoGlryindex) as? MyCustomTableViewCell,
               let user = cell.saveUser
         else {return}
@@ -36,7 +35,6 @@ class MyFriendsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let nibFile = UINib(nibName: "MyCustomTableViewCell", bundle: nil)
         self.tableView.register(nibFile, forCellReuseIdentifier: myCustomTableViewCellReuse)
         createUsersDictionary()
@@ -46,30 +44,23 @@ class MyFriendsTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return userSectionTitles.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         let userKey = userSectionTitles[section]
         guard let userValues = usersDict[userKey] else {return 0}
-        
         return userValues.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: myCustomTableViewCellReuse, for: indexPath) as? MyCustomTableViewCell
         else {return UITableViewCell()}
-        
         let usersKey = userSectionTitles[indexPath.section]
-        
         if let usersValues = usersDict[usersKey] {
             cell.configureUser(user: usersValues[indexPath.row])
         }
-
         return cell
     }
     
@@ -101,6 +92,11 @@ class MyFriendsTableViewController: UITableViewController {
         return userSectionTitles
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else {return}
+        header.tintColor = UIColor.init(white: 1.5, alpha: 0.5)
+    }
+    
     
     func addPopUpView () {
         
@@ -116,10 +112,10 @@ class MyFriendsTableViewController: UITableViewController {
     }
     
     func removePopUpView() {
+        
         UIView.animate(withDuration: 0.5, animations: {
             self.popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.popUpView.alpha = 0
-            
         }) { (success: Bool) in
             self.popUpView.removeFromSuperview()
         }
@@ -131,11 +127,9 @@ class MyFriendsTableViewController: UITableViewController {
         for user in DataStorage.shared.usersArray {
             usersArray.append(user)
         }
-        
         for user in usersArray {
             let firstLetterIndex = user.name.index(user.name.startIndex, offsetBy: 1)
             let userKey = String(user.name[..<firstLetterIndex])
-            
             if var usersValues = usersDict[userKey] {
                 usersValues.append(user)
                 usersDict[userKey] = usersValues
@@ -143,9 +137,7 @@ class MyFriendsTableViewController: UITableViewController {
                 usersDict[userKey] = [user]
             }
         }
-        
         userSectionTitles = [String] (usersDict.keys)
         userSectionTitles = userSectionTitles.sorted(by: {$0 < $1})
-        
     }
 }
