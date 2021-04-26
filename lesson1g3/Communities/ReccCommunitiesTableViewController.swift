@@ -7,41 +7,36 @@
 import Foundation
 import UIKit
 
-class ReccCommunitiesTableViewController: UITableViewController {
+class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDelegate {
+    
+    @IBOutlet weak var reccSearchBar: UISearchBar!
     
     var index: IndexPath = []
+    var filtredData = [Group](DataStorage.shared.recommendedGroups)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "MyCustomTableViewCell", bundle: nil), forCellReuseIdentifier: myCustomTableViewCellReuse)
+        reccSearchBar.delegate = self
         
     }
     @IBOutlet weak var popUpLabel: UILabel!
-    
     @IBOutlet weak var popUpView: UIView!
-    
     @IBAction func pressAddCmntyBtn(_ sender: Any) {
         
         guard let cell = tableView.cellForRow(at: index) as? MyCustomTableViewCell,
               let group = cell.saveGroup
         else {return}
-        
         var isUnableForAdd = false
-        
         for item in DataStorage.shared.myGroups {
-            
-            
             if item.name == group.name {
                 isUnableForAdd = true
             }
         }
-        
         if !isUnableForAdd {
             DataStorage.shared.myGroups.append(group)
         }
-        
         self.navigationController?.popViewController(animated: true)
-        
     }
     
     @IBAction func pressCancelBtn(_ sender: Any) {
@@ -56,35 +51,19 @@ class ReccCommunitiesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataStorage.shared.recommendedGroups.count
+        return filtredData.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: myCustomTableViewCellReuse, for: indexPath) as? MyCustomTableViewCell else {return UITableViewCell()}
-        cell.configureGroup(group: DataStorage.shared.recommendedGroups[indexPath.row])
+        cell.configureGroup(group: filtredData[indexPath.row])
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
-    
-    }
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        var nameArray = [String]()
-        for index in DataStorage.shared.recommendedGroups {
-            let username = index.name
-            nameArray.append(username!)
-        }
-        
-        var firstLettersArray = [String]()
-        for name in nameArray {
-            let letter = name.prefix(1)
-            firstLettersArray.append(String(letter))
-        }
-        
-        return firstLettersArray
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -94,7 +73,7 @@ class ReccCommunitiesTableViewController: UITableViewController {
         popUpLabel.text = tmpGroup.name
         addPopUpView()
     }
-    
+
     func addPopUpView () {
         
         self.tableView.addSubview(popUpView)
@@ -112,11 +91,22 @@ class ReccCommunitiesTableViewController: UITableViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.popUpView.alpha = 0
-            
         }) { (success: Bool) in
             self.popUpView.removeFromSuperview()
-            
         }
-        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filtredData = []
+        if searchText == "" {
+            filtredData = DataStorage.shared.recommendedGroups
+        } else {
+            for group in DataStorage.shared.recommendedGroups {
+                if group.name!.lowercased().contains(searchText.lowercased()) {
+                    filtredData.append(group)
+                }
+            }
+        }
+        self.tableView.reloadData()
     }
 }

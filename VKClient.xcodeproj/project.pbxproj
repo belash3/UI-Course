@@ -123,19 +123,18 @@
 		020496FF2617885D0096487D /* lesson1g3 */ = {
 			isa = PBXGroup;
 			children = (
+				02F09EFB2636194A00EC2940 /* Communities */,
 				02180A6426278CB100651758 /* Cells */,
 				02180A6326278C9500651758 /* Friends */,
 				02180A472627724100651758 /* model */,
 				020497002617885D0096487D /* AppDelegate.swift */,
 				020497022617885D0096487D /* SceneDelegate.swift */,
 				020497042617885D0096487D /* ViewController.swift */,
-				02180A212624B9E300651758 /* MyCommunitiesTableView.swift */,
-				02B4495F2628D9590019C1BF /* ReccCommunitiesTableViewController.swift */,
+				02180A5226277A1500651758 /* TabBarController.swift */,
 				020497062617885D0096487D /* Main.storyboard */,
 				020497092617885D0096487D /* Assets.xcassets */,
 				0204970B2617885D0096487D /* LaunchScreen.storyboard */,
 				0204970E2617885D0096487D /* Info.plist */,
-				02180A5226277A1500651758 /* TabBarController.swift */,
 			);
 			path = lesson1g3;
 			sourceTree = "<group>";
@@ -202,6 +201,15 @@
 				02B2F62C2627AF70004AF9B0 /* FriendsPhotoCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		02F09EFB2636194A00EC2940 /* Communities */ = {
+			isa = PBXGroup;
+			children = (
+				02180A212624B9E300651758 /* MyCommunitiesTableView.swift */,
+				02B4495F2628D9590019C1BF /* ReccCommunitiesTableViewController.swift */,
+			);
+			path = Communities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
