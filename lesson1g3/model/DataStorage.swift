@@ -16,4 +16,5 @@ class DataStorage: NSObject {
     var usersArray = [User]()
     var recommendedGroups = [Group]()
     var myGroups = [Group]()
+    var newsArray = [News]()
 }

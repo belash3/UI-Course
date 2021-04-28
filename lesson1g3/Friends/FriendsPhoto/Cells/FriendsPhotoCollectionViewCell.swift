@@ -22,7 +22,7 @@ class FriendsPhotoCollectionViewCell: UICollectionViewCell {
         } else if isLiked {
             likeLabel.text = String(numberOfLikes)
             likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            likeButton.tintColor = UIColor.black
+            likeButton.tintColor = UIColor.systemBlue
         }
         isLiked = !isLiked
     }
