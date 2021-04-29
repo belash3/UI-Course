@@ -84,6 +84,8 @@ class MyFriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         photoGlryindex = indexPath
         popUpLabel.text = "Hello!"
+
+
             //popUpLabel.text = DataStorage.shared.usersArray[indexPath.row].name
         addPopUpView()
     }
@@ -105,7 +107,7 @@ class MyFriendsTableViewController: UITableViewController {
         popUpView.layer.cornerRadius = 10
         popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         popUpView.alpha = 0
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.popUpView.alpha = 1
             self.popUpView.transform = CGAffineTransform.identity
         }
@@ -113,7 +115,7 @@ class MyFriendsTableViewController: UITableViewController {
     
     func removePopUpView() {
         
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.popUpView.alpha = 0
         }) { (success: Bool) in

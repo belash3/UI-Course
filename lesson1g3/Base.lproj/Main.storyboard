@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -66,6 +66,32 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kJ5-4n-9Tz">
+                                        <rect key="frame" x="177" y="466.5" width="60" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKg-52-Uj4">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGray6Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk4-Y7-94r">
+                                                <rect key="frame" x="20" y="0.0" width="20" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGray6Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hd7-h7-u5e">
+                                                <rect key="frame" x="40" y="0.0" width="20" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGray6Color"/>
+                                                <color key="highlightedColor" systemColor="systemGray6Color"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="eHG-Sw-wMa"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="Xs6-lf-FJB"/>
                                 <constraints>
@@ -74,10 +100,12 @@
                                     <constraint firstAttribute="trailing" secondItem="6co-d2-fYh" secondAttribute="trailing" constant="157" id="7GS-HS-27L"/>
                                     <constraint firstItem="fla-JE-9ZZ" firstAttribute="top" secondItem="6R7-BA-Osm" secondAttribute="bottom" constant="50" id="7To-fx-BCc"/>
                                     <constraint firstItem="sSg-wd-27p" firstAttribute="top" secondItem="TVC-eq-yx3" secondAttribute="bottom" constant="50" id="7bZ-Ik-zAe"/>
+                                    <constraint firstItem="kJ5-4n-9Tz" firstAttribute="centerX" secondItem="Xs6-lf-FJB" secondAttribute="centerX" id="9aq-mp-eBv"/>
                                     <constraint firstItem="6R7-BA-Osm" firstAttribute="centerX" secondItem="Qtv-xs-jcF" secondAttribute="centerX" id="EEl-jh-siA"/>
                                     <constraint firstItem="1Sh-ga-zYn" firstAttribute="top" secondItem="6co-d2-fYh" secondAttribute="bottom" constant="25" id="QSH-L4-laf"/>
                                     <constraint firstAttribute="bottom" secondItem="6co-d2-fYh" secondAttribute="bottom" constant="616.5" id="ZBL-9h-52h"/>
                                     <constraint firstItem="6co-d2-fYh" firstAttribute="centerX" secondItem="fla-JE-9ZZ" secondAttribute="centerX" id="ZCb-et-uMy"/>
+                                    <constraint firstItem="kJ5-4n-9Tz" firstAttribute="top" secondItem="fla-JE-9ZZ" secondAttribute="bottom" constant="50" id="bJo-63-QFZ"/>
                                     <constraint firstItem="6R7-BA-Osm" firstAttribute="top" secondItem="1Sh-ga-zYn" secondAttribute="bottom" constant="10" id="dEC-XQ-yFm"/>
                                     <constraint firstItem="TVC-eq-yx3" firstAttribute="top" secondItem="Qtv-xs-jcF" secondAttribute="top" constant="20" id="edX-4x-yXA"/>
                                     <constraint firstItem="TVC-eq-yx3" firstAttribute="centerX" secondItem="Qtv-xs-jcF" secondAttribute="centerX" id="fxK-Lz-0gq"/>
@@ -99,6 +127,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadLabel1" destination="MKg-52-Uj4" id="9bY-N6-HvS"/>
+                        <outlet property="loadLabel2" destination="Kk4-Y7-94r" id="MhG-np-IwI"/>
+                        <outlet property="loadLabel3" destination="Hd7-h7-u5e" id="Ai6-x7-yzf"/>
                         <outlet property="loginTextField" destination="6co-d2-fYh" id="pMN-qD-16S"/>
                         <outlet property="passwordTextField" destination="6R7-BA-Osm" id="QQw-BX-6xe"/>
                         <segue destination="uZA-k9-v3E" kind="presentation" identifier="fromLoginToTabbarSegue" modalPresentationStyle="fullScreen" id="Q0s-9g-ze3"/>
@@ -106,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-748" y="80"/>
+            <point key="canvasLocation" x="-749.27536231884062" y="79.6875"/>
         </scene>
         <!--MyCommunities-->
         <scene sceneID="C0Q-F6-4GX">
@@ -118,7 +149,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ZFZ-Qe-xtS">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZFZ-Qe-xtS" id="mlb-DB-TLd">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -158,7 +189,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1Fm-iE-bQk" customClass="MyCustomTableViewCell" customModule="lesson1g3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="68.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Fm-iE-bQk" id="LSv-c6-Hhp">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -247,7 +278,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WZY-KQ-sUd" customClass="MyCustomTableViewCell" customModule="lesson1g3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WZY-KQ-sUd" id="KWq-ak-g4k">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -321,7 +352,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pmQ-MU-O8k" customClass="NewsTableViewCell" customModule="lesson1g3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pmQ-MU-O8k" id="YSK-0V-ORG">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -446,6 +477,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

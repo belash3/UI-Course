@@ -180,8 +180,8 @@
 		02180A6326278C9500651758 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				02B2F6292627AEF3004AF9B0 /* FriendsPhoto */,
 				02180A352624C79400651758 /* MyFriendsTableViewController.swift */,
+				02B2F6292627AEF3004AF9B0 /* FriendsPhoto */,
 			);
 			path = Friends;
 			sourceTree = "<group>";

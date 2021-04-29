@@ -10,10 +10,14 @@ import UIKit
 class ViewController: UIViewController {
     
     let fromLoginToTabbarSegue = "fromLoginToTabbarSegue"
-
+    
     @IBOutlet weak var loginTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var loadLabel1: UILabel!
+    @IBOutlet weak var loadLabel2: UILabel!
+    @IBOutlet weak var loadLabel3: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,24 +34,58 @@ class ViewController: UIViewController {
         alertController.addAction(actionButton)
         present(alertController, animated: true, completion: nil)
     }
- 
-
+    
+    
+    
     @IBAction func pressLoginButton(_ sender: Any) {
-//    guard let login = self.loginTextField.text,
-//              let password = self.passwordTextField.text,
-//              login.trimmingCharacters(in: .whitespacesAndNewlines) == "admin",
-//              password.trimmingCharacters(in: .whitespacesAndNewlines) == "12345678"
-//        else {
-//            showAlert(alertText: "Wrong login or password")
-//            return
-//        }
-//
-        performSegue(withIdentifier: fromLoginToTabbarSegue, sender: self)
+        //    guard let login = self.loginTextField.text,
+        //              let password = self.passwordTextField.text,
+        //              login.trimmingCharacters(in: .whitespacesAndNewlines) == "admin",
+        //              password.trimmingCharacters(in: .whitespacesAndNewlines) == "12345678"
+        //        else {
+        //            showAlert(alertText: "Wrong login or password")
+        //            return
+        //        }
+        //
+        loadAnimation()
+        
+        // performSegue(withIdentifier: fromLoginToTabbarSegue, sender: self)
     }
     
-
-    
-    
-    
-    
+    func loadAnimation() {
+        UIView.animate(withDuration: 0.6, delay: 0.3, options: [.autoreverse, .repeat], animations: {[weak self] in
+            guard let self = self else {return}
+            self.loadLabel1.alpha = 1
+        },
+        completion: nil)
+        UIView.animate(withDuration: 0.6, delay: 0.6, options: [.autoreverse, .repeat], animations: {[weak self] in
+            guard let self = self else {return}
+            self.loadLabel2.alpha = 1
+        },
+        completion: nil)
+        UIView.animate(withDuration: 0.6, delay: 0.9, options: .autoreverse, animations: {[weak self] in
+            guard let self = self else {return}
+            self.loadLabel3.alpha = 1
+        }, completion: {[weak self] _ in
+            guard let self = self else {return}
+            self.loadLabel3.alpha = 0
+            UIView.animate(withDuration: 0.6, delay: 0, options: .autoreverse, animations: {[weak self] in
+                guard let self = self else {return}
+                self.loadLabel3.alpha = 1
+            }, completion: {[weak self] _ in
+                guard let self = self else {return}
+                self.loadLabel3.alpha = 0
+                self.performSegue(withIdentifier: self.fromLoginToTabbarSegue, sender: self)
+            })
+        })
+        
+        
+        //completion: { [weak self] _ in
+        //    guard let self = self else {return}
+        //    self.performSegue(withIdentifier: self.fromLoginToTabbarSegue, sender: self)
+        
+        
+        
+        
+    }
 }

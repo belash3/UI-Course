@@ -51,16 +51,30 @@ class MyCustomTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        avatarAnimate()
 
     }
     
+    
+        func avatarAnimate() {
+            let anime = CASpringAnimation(keyPath: "transform.scale")
+            anime.fromValue = 0.9
+            anime.toValue = 1
+            anime.stiffness = 3000
+            anime.mass = 1.5
+            anime.duration = 0.3
+            anime.fillMode = CAMediaTimingFillMode.backwards
+            anime.autoreverses = false
+            myImageView.layer.add(anime, forKey: nil)
+            myBackview.layer.add(anime, forKey: nil)
+        }
+        
     
     
     
     func configureUser(user: User) {
         
         myLabel1.text = user.name
-        
         myLabel2.text = "Пол: " + user.gender.rawValue
         if let age = user.age {
             myLabel3.text = "Возраст: " + String(age)
@@ -74,8 +88,8 @@ class MyCustomTableViewCell: UITableViewCell {
     func configureGroup(group: Group) {
         
         if let name = group.name {
-            myLabel1.text = String(name) }
-        
+            myLabel1.text = String(name)
+        }
         myLabel2.text = " "
         if let descr = group.description {
             myLabel3.text = String(descr)
