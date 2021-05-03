@@ -9,17 +9,24 @@ import UIKit
 let myCustomTableViewCellReuse = "MyCustomTableViewCell"
 let fromFriendsToPhotoSegue = "fromFriendsToPhoto"
 let photoCollectionViewControllerID = "PhotoCollectionViewController"
-class MyFriendsTableViewController: UITableViewController {
+class MyFriendsTableViewController: UITableViewController, SwypeVCDelegate {
+    
+    func fillGallery(of user: User) {
+        images = user.userPhotoGallery
+    }
+    
     
     var photoGlryindex: IndexPath = []
     var firstNameLettersArray = [String]()
     var usersDict = [String: [User]]()
     var userSectionTitles = [String]()
+
     
     
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var myFriends: UITableView!
     @IBOutlet weak var popUpLabel: UILabel!
+    @IBOutlet weak var swypeGlryBtn: UIButton!
     
     @IBAction func shwPhotoGllryButton(_ sender: Any) {
         guard let cell = tableView.cellForRow(at: photoGlryindex) as? MyCustomTableViewCell,
@@ -27,6 +34,17 @@ class MyFriendsTableViewController: UITableViewController {
         else {return}
         performSegue(withIdentifier: fromFriendsToPhotoSegue, sender: user)
         removePopUpView()
+    }
+    
+    
+    @IBAction func swypeGlryBtn(_ sender: Any) {
+        guard let cell = tableView.cellForRow(at: photoGlryindex) as? MyCustomTableViewCell,
+              let user = cell.saveUser
+        else {return}
+        fillGallery(of: user)
+        performSegue(withIdentifier: "fromFriendsToSwypeGallery", sender: user)
+        removePopUpView()
+        
     }
     
     @IBAction func cancelButton(_ sender: Any) {
@@ -78,15 +96,20 @@ class MyFriendsTableViewController: UITableViewController {
                   let destination = segue.destination as? PhotoCollectionViewController
             else {return}
             destination.user = user
+            
+        }
+        if segue.identifier == "fromFriendsToSwypeGallery" {
+            let destinationVC = segue.destination as! SwypePhotoGalleryViewController
+            destinationVC.delegate = self
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? MyCustomTableViewCell,
+              let user = cell.saveUser
+        else {return}
         photoGlryindex = indexPath
-        popUpLabel.text = "Hello!"
-
-
-            //popUpLabel.text = DataStorage.shared.usersArray[indexPath.row].name
+        popUpLabel.text = user.name
         addPopUpView()
     }
     
@@ -143,3 +166,5 @@ class MyFriendsTableViewController: UITableViewController {
         userSectionTitles = userSectionTitles.sorted(by: {$0 < $1})
     }
 }
+
+

@@ -293,6 +293,7 @@
                         <outlet property="myFriends" destination="0N0-av-fRO" id="S8T-pR-S78"/>
                         <outlet property="popUpLabel" destination="cdt-lp-HYM" id="x4w-5U-UnQ"/>
                         <outlet property="popUpView" destination="ANs-vi-1nB" id="N2R-Lq-WYh"/>
+                        <outlet property="swypeGlryBtn" destination="ymp-ZI-jyn" id="KiG-Oz-fGL"/>
                         <segue destination="kip-Hz-7Ht" kind="show" identifier="fromFriendsToPhoto" id="C8L-Jq-x1z"/>
                     </connections>
                 </tableViewController>
@@ -323,6 +324,15 @@
                             </state>
                             <connections>
                                 <action selector="shwPhotoGllryButton:" destination="ZRu-Zo-n5U" eventType="touchUpInside" id="HG9-ac-Tu1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymp-ZI-jyn">
+                            <rect key="frame" x="101" y="83" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="swypeGlryBtn:" destination="ZRu-Zo-n5U" eventType="touchUpInside" id="BJk-Ce-9c2"/>
+                                <segue destination="7sx-tA-yl8" kind="show" identifier="fromFriendsToSwypeGallery" id="kkM-f0-9HX"/>
                             </connections>
                         </button>
                     </subviews>
@@ -370,6 +380,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8z2-uV-88G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1594" y="1320"/>
+        </scene>
+        <!--Swype Photo Gallery View Controller-->
+        <scene sceneID="cCl-Vc-qZs">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1jy-IJ-Gat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="7sx-tA-yl8" customClass="SwypePhotoGalleryViewController" customModule="lesson1g3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="T7v-H5-B5Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="hAi-ND-9ws" customClass="HorizontalSwypeView" customModule="lesson1g3" customModuleProvider="target">
+                                <rect key="frame" x="20" y="138" width="374" height="374"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hAi-ND-9ws" secondAttribute="height" multiplier="1:1" id="w6n-hK-FXS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Spo-bK-R2x"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hAi-ND-9ws" firstAttribute="top" secondItem="Spo-bK-R2x" secondAttribute="top" constant="50" id="NAg-Zq-JcG"/>
+                            <constraint firstItem="hAi-ND-9ws" firstAttribute="leading" secondItem="Spo-bK-R2x" secondAttribute="leading" constant="20" id="Xpi-eg-bfS"/>
+                            <constraint firstItem="hAi-ND-9ws" firstAttribute="centerX" secondItem="Spo-bK-R2x" secondAttribute="centerX" id="aYQ-EK-gTK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EiR-pP-L7G"/>
+                    <connections>
+                        <outlet property="galleryView" destination="hAi-ND-9ws" id="np3-GG-mlR"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2581" y="1121"/>
         </scene>
         <!--News-->
         <scene sceneID="Ohk-Sx-6eF">
