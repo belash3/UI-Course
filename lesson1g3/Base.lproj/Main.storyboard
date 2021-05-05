@@ -172,7 +172,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gft-x2-6Ch" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="-204"/>
+            <point key="canvasLocation" x="1690" y="-593"/>
         </scene>
         <!--Recommended-->
         <scene sceneID="tM2-kX-6iz">
@@ -249,7 +249,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2592.753623188406" y="-204.24107142857142"/>
+            <point key="canvasLocation" x="2593" y="-593"/>
         </scene>
         <!--My communities-->
         <scene sceneID="G2H-ZI-yRw">
@@ -266,7 +266,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nqa-oK-ZOl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802" y="-204"/>
+            <point key="canvasLocation" x="816" y="-593"/>
         </scene>
         <!--My friends-->
         <scene sceneID="YDL-gY-BYr">
@@ -303,7 +303,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIC-CQ-TGC">
-                            <rect key="frame" x="101" y="106" width="48" height="30"/>
+                            <rect key="frame" x="101" y="111" width="48" height="30"/>
                             <state key="normal" title="Cancel">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -311,25 +311,26 @@
                                 <action selector="cancelButton:" destination="ZRu-Zo-n5U" eventType="touchUpInside" id="yOI-Ny-5a7"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdt-lp-HYM">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdt-lp-HYM">
                             <rect key="frame" x="50" y="15" width="150" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rv-7G-PSq">
-                            <rect key="frame" x="25" y="56" width="200" height="30"/>
-                            <state key="normal" title="Show photo gallery">
+                            <rect key="frame" x="25" y="51" width="200" height="30"/>
+                            <state key="normal" title="Photo gallery">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="shwPhotoGllryButton:" destination="ZRu-Zo-n5U" eventType="touchUpInside" id="HG9-ac-Tu1"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymp-ZI-jyn">
-                            <rect key="frame" x="101" y="83" width="46" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymp-ZI-jyn">
+                            <rect key="frame" x="55" y="81" width="140" height="30"/>
+                            <state key="normal" title="Swype photo gallery">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <connections>
                                 <action selector="swypeGlryBtn:" destination="ZRu-Zo-n5U" eventType="touchUpInside" id="BJk-Ce-9c2"/>
                                 <segue destination="7sx-tA-yl8" kind="show" identifier="fromFriendsToSwypeGallery" id="kkM-f0-9HX"/>
@@ -339,18 +340,20 @@
                     <viewLayoutGuide key="safeArea" id="Cj9-zr-3oC"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="0.80285395408163263" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="ymp-ZI-jyn" firstAttribute="centerX" secondItem="Cj9-zr-3oC" secondAttribute="centerX" id="2fJ-lw-hqh"/>
+                        <constraint firstItem="ymp-ZI-jyn" firstAttribute="top" secondItem="8rv-7G-PSq" secondAttribute="bottom" id="5S4-mg-bZP"/>
                         <constraint firstItem="cdt-lp-HYM" firstAttribute="centerX" secondItem="8rv-7G-PSq" secondAttribute="centerX" id="6Q8-4o-ShJ"/>
                         <constraint firstItem="cdt-lp-HYM" firstAttribute="leading" secondItem="ANs-vi-1nB" secondAttribute="leading" constant="50" id="EMq-6o-pTb"/>
                         <constraint firstItem="gIC-CQ-TGC" firstAttribute="centerX" secondItem="cdt-lp-HYM" secondAttribute="centerX" id="P9o-qd-4xb"/>
-                        <constraint firstItem="8rv-7G-PSq" firstAttribute="top" secondItem="cdt-lp-HYM" secondAttribute="bottom" constant="20" id="PHL-Eq-7w2"/>
-                        <constraint firstItem="gIC-CQ-TGC" firstAttribute="top" secondItem="8rv-7G-PSq" secondAttribute="bottom" constant="20" id="Zvn-hM-8vT"/>
+                        <constraint firstItem="8rv-7G-PSq" firstAttribute="top" secondItem="cdt-lp-HYM" secondAttribute="bottom" constant="15" id="PHL-Eq-7w2"/>
                         <constraint firstItem="cdt-lp-HYM" firstAttribute="centerX" secondItem="Cj9-zr-3oC" secondAttribute="centerX" id="lXB-bB-xdm"/>
                         <constraint firstItem="cdt-lp-HYM" firstAttribute="top" secondItem="ANs-vi-1nB" secondAttribute="top" constant="15" id="oQQ-0Z-dij"/>
                         <constraint firstItem="8rv-7G-PSq" firstAttribute="width" secondItem="ANs-vi-1nB" secondAttribute="width" multiplier="0.8" id="qaH-QE-s6v"/>
+                        <constraint firstItem="gIC-CQ-TGC" firstAttribute="top" secondItem="ymp-ZI-jyn" secondAttribute="bottom" id="v2E-Kw-9X2"/>
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1691" y="647"/>
+            <point key="canvasLocation" x="1690" y="439"/>
         </scene>
         <!--News-->
         <scene sceneID="GAT-Zf-fXp">
@@ -379,12 +382,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8z2-uV-88G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="1320"/>
+            <point key="canvasLocation" x="1690" y="1450"/>
         </scene>
         <!--Swype Photo Gallery View Controller-->
         <scene sceneID="cCl-Vc-qZs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1jy-IJ-Gat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="7sx-tA-yl8" customClass="SwypePhotoGalleryViewController" customModule="lesson1g3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" id="T7v-H5-B5Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -411,8 +413,9 @@
                         <outlet property="galleryView" destination="hAi-ND-9ws" id="np3-GG-mlR"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1jy-IJ-Gat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2581" y="1121"/>
+            <point key="canvasLocation" x="2593" y="80"/>
         </scene>
         <!--News-->
         <scene sceneID="Ohk-Sx-6eF">
@@ -429,7 +432,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vig-gu-gjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="1320"/>
+            <point key="canvasLocation" x="816" y="1451"/>
         </scene>
         <!--Photo Collection View Controller-->
         <scene sceneID="Ary-04-Uoe">
@@ -460,7 +463,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JtY-1B-cXg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2594" y="455"/>
+            <point key="canvasLocation" x="2593" y="756"/>
         </scene>
         <!--My Friends-->
         <scene sceneID="8DS-ea-HYJ">
@@ -479,7 +482,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xy-0U-4Lt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="456"/>
+            <point key="canvasLocation" x="816" y="439"/>
         </scene>
         <!--My profile-->
         <scene sceneID="vB0-HV-nAX">
@@ -498,7 +501,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCT-jf-fTc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="81"/>
+            <point key="canvasLocation" x="35" y="80"/>
         </scene>
     </scenes>
     <resources>

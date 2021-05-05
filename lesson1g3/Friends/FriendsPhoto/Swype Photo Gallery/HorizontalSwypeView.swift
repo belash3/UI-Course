@@ -115,15 +115,20 @@ class HorizontalSwypeView: UIView {
         switch recognizer.state {
         case .began:
             self.mainImageView.transform = .identity
+            self.mainImageView.alpha = 1
             self.mainImageView.image = images[currentIndex]
             self.secondaryImageView.transform = .identity
+            self.secondaryImageView.alpha = 1
             self.bringSubviewToFront(self.mainImageView)
             
             interactiveAnimator?.startAnimation()
             interactiveAnimator = UIViewPropertyAnimator(duration: 0.5,
                                                          curve: .easeInOut,
                                                          animations: { [weak self] in
-                                                            self?.mainImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
+                                                            //self?.mainImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
+                                                            self?.mainImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+                                                            self?.mainImageView.alpha = 0
+                                                            
                                                          })
             interactiveAnimator.pauseAnimation()
             isLeftSwipe = false
@@ -146,8 +151,12 @@ class HorizontalSwypeView: UIView {
                 
                 interactiveAnimator.stopAnimation(true)
                 interactiveAnimator.addAnimations { [weak self] in
-                    self?.mainImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
+                    //self?.mainImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
+                    self?.mainImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+                    self?.mainImageView.alpha = 0
                     self?.secondaryImageView.transform = .identity
+                    self?.bringSubviewToFront(self?.secondaryImageView ?? UIImageView())
+                    self?.secondaryImageView.alpha = 1
                 }
                 interactiveAnimator.addCompletion({ [weak self] _ in
                     self?.onChangeCompletion(isLeft: true)
@@ -166,9 +175,16 @@ class HorizontalSwypeView: UIView {
                 chooseFlag = true
                 onChange(isLeft: false)
                 interactiveAnimator.stopAnimation(true)
+                self.secondaryImageView.transform = .identity
+                self.secondaryImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+                self.secondaryImageView.alpha = 0
                 interactiveAnimator.addAnimations { [weak self] in
                     self?.mainImageView.transform = CGAffineTransform(translationX: UIScreen.main.bounds.width, y: 0)
-                    self?.secondaryImageView.transform = .identity
+                  //  self?.mainImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+                    //self?.secondaryImageView.transform = .identity
+                    self?.secondaryImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                    self?.secondaryImageView.alpha = 1
+                    
                 }
                 interactiveAnimator.addCompletion({ [weak self] _ in
                     self?.onChangeCompletion(isLeft: false)
@@ -192,7 +208,6 @@ class HorizontalSwypeView: UIView {
                 return
             }
             var translation = recognizer.translation(in: self.view)
-            
             if translation.x < 0 {translation.x = -translation.x}
             
             if (translation.x / (UIScreen.main.bounds.width)) > 0.5  {
@@ -203,18 +218,24 @@ class HorizontalSwypeView: UIView {
                 interactiveAnimator.finishAnimation(at: .start)
                 interactiveAnimator.addAnimations { [weak self] in
                     self?.mainImageView.transform = .identity
+                    self?.mainImageView.alpha = 1
                     guard let weakSelf = self else {return}
                     if weakSelf.isLeftSwipe {
                         self?.secondaryImageView.transform = CGAffineTransform(translationX: UIScreen.main.bounds.width, y: 0)
+                        //self?.secondaryImageView.alpha = 0
                     }
                     if weakSelf.isRightSwipe {
-                        self?.secondaryImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
+                        //self?.secondaryImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
+                        self?.secondaryImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+                        //self?.secondaryImageView.alpha = 0
                     }
                 }
                 
                 interactiveAnimator.addCompletion({ [weak self] _ in
                     self?.mainImageView.transform = .identity
+                    self?.mainImageView.alpha = 1
                     self?.secondaryImageView.transform = .identity
+                    self?.secondaryImageView.alpha = 0
                 })
                 
                 interactiveAnimator.startAnimation()

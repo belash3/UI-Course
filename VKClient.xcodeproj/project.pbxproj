@@ -137,10 +137,10 @@
 		020496FF2617885D0096487D /* lesson1g3 */ = {
 			isa = PBXGroup;
 			children = (
+				02180A6326278C9500651758 /* Friends */,
 				02D5D1072637651A003E1E5A /* News */,
 				02F09EFB2636194A00EC2940 /* Communities */,
 				02180A6426278CB100651758 /* Cells */,
-				02180A6326278C9500651758 /* Friends */,
 				02180A472627724100651758 /* model */,
 				020497002617885D0096487D /* AppDelegate.swift */,
 				020497022617885D0096487D /* SceneDelegate.swift */,
@@ -201,25 +201,33 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		0228296F26432E2B0011A0A2 /* Swype Photo Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				02282963263EB5DC0011A0A2 /* HorizontalSwypeView.swift */,
+				0228296B263F05DB0011A0A2 /* HorizontalSwypeView.xib */,
+				0228296D263F1CB50011A0A2 /* SwypePhotoGalleryViewController.swift */,
+			);
+			path = "Swype Photo Gallery";
+			sourceTree = "<group>";
+		};
 		02B2F6292627AEF3004AF9B0 /* FriendsPhoto */ = {
 			isa = PBXGroup;
 			children = (
-				02B2F62A2627AF1B004AF9B0 /* Cells */,
-				02B2F6242627AC39004AF9B0 /* PhotoCollectionViewController.swift */,
-				02282963263EB5DC0011A0A2 /* HorizontalSwypeView.swift */,
-				0228296D263F1CB50011A0A2 /* SwypePhotoGalleryViewController.swift */,
-				0228296B263F05DB0011A0A2 /* HorizontalSwypeView.xib */,
+				02B2F62A2627AF1B004AF9B0 /* Photo Gallery */,
+				0228296F26432E2B0011A0A2 /* Swype Photo Gallery */,
 			);
 			path = FriendsPhoto;
 			sourceTree = "<group>";
 		};
-		02B2F62A2627AF1B004AF9B0 /* Cells */ = {
+		02B2F62A2627AF1B004AF9B0 /* Photo Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				02B2F6242627AC39004AF9B0 /* PhotoCollectionViewController.swift */,
 				02B2F62B2627AF70004AF9B0 /* FriendsPhotoCollectionViewCell.swift */,
 				02B2F62C2627AF70004AF9B0 /* FriendsPhotoCollectionViewCell.xib */,
 			);
-			path = Cells;
+			path = "Photo Gallery";
 			sourceTree = "<group>";
 		};
 		02D5D1072637651A003E1E5A /* News */ = {
