@@ -10,6 +10,8 @@ import UIKit
 class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var reccSearchBar: UISearchBar!
+    @IBOutlet weak var popUpLabel: UILabel!
+    @IBOutlet weak var popUpView: UIView!
     
     var index: IndexPath = []
     var filtredData = [Group](DataStorage.shared.recommendedGroups)
@@ -18,12 +20,9 @@ class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDele
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "MyCustomTableViewCell", bundle: nil), forCellReuseIdentifier: myCustomTableViewCellReuse)
         reccSearchBar.delegate = self
-        
     }
-    @IBOutlet weak var popUpLabel: UILabel!
-    @IBOutlet weak var popUpView: UIView!
+    
     @IBAction func pressAddCmntyBtn(_ sender: Any) {
-        
         guard let cell = tableView.cellForRow(at: index) as? MyCustomTableViewCell,
               let group = cell.saveGroup
         else {return}
@@ -43,9 +42,6 @@ class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDele
         removePopUpView()
     }
     
-    
-    // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -54,9 +50,7 @@ class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDele
         return filtredData.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: myCustomTableViewCellReuse, for: indexPath) as? MyCustomTableViewCell else {return UITableViewCell()}
         cell.configureGroup(group: filtredData[indexPath.row])
         return cell
@@ -67,15 +61,13 @@ class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDele
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         index = indexPath
         let tmpGroup = DataStorage.shared.recommendedGroups[indexPath.row]
         popUpLabel.text = tmpGroup.name
         addPopUpView()
     }
-
+    
     func addPopUpView () {
-        
         self.tableView.addSubview(popUpView)
         popUpView.center = self.tableView.center
         popUpView.layer.cornerRadius = 10
@@ -88,10 +80,11 @@ class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDele
     }
     
     func removePopUpView() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-            self.popUpView.alpha = 0
-        }) { (success: Bool) in
+        UIView.animate(withDuration: 0.5,
+                       animations: {
+                        self.popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+                        self.popUpView.alpha = 0
+                       }) {(success: Bool) in
             self.popUpView.removeFromSuperview()
         }
     }

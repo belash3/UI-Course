@@ -26,6 +26,5 @@ func setNewNews(user: User, newsTitle: String, newsText: String) -> News {
     if let picture = UIImage(named: imagename) {
         newNews.image = picture
     }
-    
     return newNews
 }

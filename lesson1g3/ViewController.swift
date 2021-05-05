@@ -12,17 +12,13 @@ class ViewController: UIViewController {
     let fromLoginToTabbarSegue = "fromLoginToTabbarSegue"
     
     @IBOutlet weak var loginTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var loadLabel1: UILabel!
     @IBOutlet weak var loadLabel2: UILabel!
     @IBOutlet weak var loadLabel3: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
     }
     
     func showAlert(alertText: String){
@@ -35,9 +31,8 @@ class ViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    
-    
     @IBAction func pressLoginButton(_ sender: Any) {
+        loadAnimation()
         //    guard let login = self.loginTextField.text,
         //              let password = self.passwordTextField.text,
         //              login.trimmingCharacters(in: .whitespacesAndNewlines) == "admin",
@@ -47,8 +42,6 @@ class ViewController: UIViewController {
         //            return
         //        }
         //
-        loadAnimation()
-        
         // performSegue(withIdentifier: fromLoginToTabbarSegue, sender: self)
     }
     
@@ -78,14 +71,5 @@ class ViewController: UIViewController {
                 self.performSegue(withIdentifier: self.fromLoginToTabbarSegue, sender: self)
             })
         })
-        
-        
-        //completion: { [weak self] _ in
-        //    guard let self = self else {return}
-        //    self.performSegue(withIdentifier: self.fromLoginToTabbarSegue, sender: self)
-        
-        
-        
-        
     }
 }

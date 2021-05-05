@@ -9,22 +9,16 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    @IBOutlet weak var userAvatar: UIImageView!    
+    
+    @IBInspectable var shadowOpacity: Float = 0.9
+    @IBInspectable var shadowColor: UIColor = UIColor.black
+    @IBInspectable var shadowRadius: CGFloat = 10
+    @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
-    
     @IBOutlet weak var commentsLabel: UILabel!
-    
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsTextLabel: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
-    @IBInspectable var shadowOpacity: Float = 0.9
-    @IBInspectable var shadowColor: UIColor = UIColor.black //.cgColor
-    @IBInspectable var shadowRadius: CGFloat = 10
-    
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var viewsLabel: UILabel!
@@ -35,6 +29,10 @@ class NewsTableViewCell: UITableViewCell {
     var numberOfViews = Int.random(in: 100...2000)
     var numberOfComments = Int.random(in: 1...50)
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     @IBAction func likeButton(_ sender: Any) {
         if !isLiked {
         UIView.transition(with: self.likeLabel,
@@ -44,7 +42,6 @@ class NewsTableViewCell: UITableViewCell {
                             guard let self = self else {return}
                             self.likeLabel.text = String(self.numberOfLikes + 1)},
                           completion: nil)
-        //likeLabel.text = String(numberOfLikes + 1)
         likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         likeButton.tintColor = UIColor.red
     } else if isLiked {
@@ -55,26 +52,14 @@ class NewsTableViewCell: UITableViewCell {
                             guard let self = self else {return}
                             self.likeLabel.text = String(self.numberOfLikes)},
                           completion: nil)
-        //likeLabel.text = String(numberOfLikes)
         likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         likeButton.tintColor = UIColor.systemBlue
     }
     isLiked = !isLiked
-    
-//        if !isLiked {
-//            likeLabel.text = String(numberOfLikes + 1)
-//            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-//            likeButton.tintColor = UIColor.red
-//        } else if isLiked {
-//            likeLabel.text = String(numberOfLikes)
-//            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-//            likeButton.tintColor = UIColor.systemBlue
-//        }
-//        isLiked = !isLiked
     }
+    
     func configureNews(news: News) {
         userAvatar.image = news.user.avatar
-        
         myBackView.layer.cornerRadius = myBackView.frame.size.width / 2
         myBackView.layer.shadowColor = shadowColor.cgColor
         myBackView.layer.shadowOpacity = shadowOpacity
@@ -92,8 +77,5 @@ class NewsTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }

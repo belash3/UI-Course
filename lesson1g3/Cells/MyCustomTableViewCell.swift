@@ -17,30 +17,26 @@ class MyCustomTableViewCell: UITableViewCell {
     @IBInspectable var shadowOpacity: Float = 0.9
     @IBInspectable var shadowColor: UIColor = UIColor.black //.cgColor
     @IBInspectable var shadowRadius: CGFloat = 10
-
-
+    
     var saveUser: User?
     var saveGroup: Group?
     
-    
-    
     func clearCustomCell() {
-        myImageView = nil
-        myLabel1 = nil
-        myLabel2 = nil
-        myLabel3 = nil
+        myImageView.image = nil
+        myLabel1.text = nil
+        myLabel2.text = nil
+        myLabel3.text = nil
         saveUser = nil
         saveGroup = nil
     }
     
     override func prepareForReuse() {
-      //  clearCustomCell()
+        clearCustomCell()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       // clearCustomCell()
-        // Initialization code
+        clearCustomCell()
         myBackview.layer.cornerRadius = myBackview.frame.size.width / 2
         myBackview.layer.shadowColor = shadowColor.cgColor
         myBackview.layer.shadowOpacity = shadowOpacity
@@ -48,32 +44,26 @@ class MyCustomTableViewCell: UITableViewCell {
         myBackview.layer.shadowOffset = CGSize.zero        
         myImageView.layer.cornerRadius = myImageView.frame.size.width / 2
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         avatarAnimate()
-
     }
     
-    
-        func avatarAnimate() {
-            let anime = CASpringAnimation(keyPath: "transform.scale")
-            anime.fromValue = 0.9
-            anime.toValue = 1
-            anime.stiffness = 3000
-            anime.mass = 1.5
-            anime.duration = 0.3
-            anime.fillMode = CAMediaTimingFillMode.backwards
-            anime.autoreverses = false
-            myImageView.layer.add(anime, forKey: nil)
-            myBackview.layer.add(anime, forKey: nil)
-        }
-        
-    
-    
+    func avatarAnimate() {
+        let anime = CASpringAnimation(keyPath: "transform.scale")
+        anime.fromValue = 0.9
+        anime.toValue = 1
+        anime.stiffness = 3000
+        anime.mass = 1.5
+        anime.duration = 0.3
+        anime.fillMode = CAMediaTimingFillMode.backwards
+        anime.autoreverses = false
+        myImageView.layer.add(anime, forKey: nil)
+        myBackview.layer.add(anime, forKey: nil)
+    }
     
     func configureUser(user: User) {
-        
         myLabel1.text = user.name
         myLabel2.text = "Пол: " + user.gender.rawValue
         if let age = user.age {
@@ -86,7 +76,6 @@ class MyCustomTableViewCell: UITableViewCell {
     }
     
     func configureGroup(group: Group) {
-        
         if let name = group.name {
             myLabel1.text = String(name)
         }
@@ -99,6 +88,5 @@ class MyCustomTableViewCell: UITableViewCell {
         }
         saveGroup = group
     }
-    
 }
 

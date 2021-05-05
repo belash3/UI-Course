@@ -8,14 +8,14 @@
 import UIKit
 
 class HorizontalSwypeView: UIView {
-
+    
     @IBInspectable var inactiveIndicatorColor: UIColor = UIColor.lightGray
     @IBInspectable var activeIndicatorColor: UIColor = UIColor.black
     
     private var view: UIView?
     private var interactiveAnimator: UIViewPropertyAnimator!
-    private var mainImageView = UIImageView() //UIView()
-    private var secondaryImageView = UIImageView() //UIView()
+    private var mainImageView = UIImageView()
+    private var secondaryImageView = UIImageView()
     private var images = [UIImage]()
     private var isLeftSwipe = false
     private var isRightSwipe = false
@@ -37,7 +37,6 @@ class HorizontalSwypeView: UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "HorizontalSwypeView", bundle: bundle)
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else {return UIView()}
-        //view.contentMode = .scaleAspectFill
         return view
     }
     
@@ -49,7 +48,7 @@ class HorizontalSwypeView: UIView {
         addSubview(view)
         let recognizer = UIPanGestureRecognizer(target: self, action: #selector(onPan(_:)))
         self.addGestureRecognizer(recognizer)
-        
+       
         mainImageView.backgroundColor = UIColor.systemYellow
         mainImageView.frame = self.bounds
         mainImageView.contentMode = .scaleAspectFill
@@ -83,28 +82,24 @@ class HorizontalSwypeView: UIView {
         if isLeft {
             self.secondaryImageView.image = images[self.currentIndex + 1]
             self.secondaryImageView.transform = CGAffineTransform(translationX: UIScreen.main.bounds.width, y: 0)
-        }
-        else {
+        } else {
             self.secondaryImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
             self.secondaryImageView.image = images[currentIndex - 1]
         }
     }
-    
     
     private func onChangeCompletion(isLeft: Bool) {
         self.mainImageView.transform = .identity
         self.secondaryImageView.transform = .identity
         if isLeft {
             self.currentIndex += 1
-        }
-        else {
+        } else {
             self.currentIndex -= 1
         }
         self.mainImageView.image = self.images[self.currentIndex]
         self.bringSubviewToFront(self.mainImageView)
         self.customPageView.currentPage = self.currentIndex
     }
-    
     
     @objc func onPan(_ recognizer: UIPanGestureRecognizer) {
         if let animator = interactiveAnimator,
@@ -125,20 +120,18 @@ class HorizontalSwypeView: UIView {
             interactiveAnimator = UIViewPropertyAnimator(duration: 0.5,
                                                          curve: .easeInOut,
                                                          animations: { [weak self] in
-                                                            //self?.mainImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
                                                             self?.mainImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
                                                             self?.mainImageView.alpha = 0
-                                                            
                                                          })
             interactiveAnimator.pauseAnimation()
             isLeftSwipe = false
             isRightSwipe = false
             chooseFlag = false
+            
         case .changed:
             var translation = recognizer.translation(in: self.view)
             
-            print(translation)
-            
+            print(translation)    
             
             if translation.x < 0 && (!isLeftSwipe) && (!chooseFlag) {
                 if self.currentIndex == (images.count - 1) {
@@ -147,11 +140,8 @@ class HorizontalSwypeView: UIView {
                 }
                 chooseFlag = true
                 onChange(isLeft: true)
-                
-                
                 interactiveAnimator.stopAnimation(true)
                 interactiveAnimator.addAnimations { [weak self] in
-                    //self?.mainImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
                     self?.mainImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
                     self?.mainImageView.alpha = 0
                     self?.secondaryImageView.transform = .identity
@@ -180,11 +170,8 @@ class HorizontalSwypeView: UIView {
                 self.secondaryImageView.alpha = 0
                 interactiveAnimator.addAnimations { [weak self] in
                     self?.mainImageView.transform = CGAffineTransform(translationX: UIScreen.main.bounds.width, y: 0)
-                  //  self?.mainImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-                    //self?.secondaryImageView.transform = .identity
                     self?.secondaryImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
                     self?.secondaryImageView.alpha = 1
-                    
                 }
                 interactiveAnimator.addCompletion({ [weak self] _ in
                     self?.onChangeCompletion(isLeft: false)
@@ -196,7 +183,6 @@ class HorizontalSwypeView: UIView {
             
             if isRightSwipe && (translation.x < 0) {return}
             if isLeftSwipe && (translation.x > 0) {return}
-            
             if translation.x < 0 {
                 translation.x = -translation.x
             }
@@ -209,11 +195,10 @@ class HorizontalSwypeView: UIView {
             }
             var translation = recognizer.translation(in: self.view)
             if translation.x < 0 {translation.x = -translation.x}
-            
             if (translation.x / (UIScreen.main.bounds.width)) > 0.5  {
                 interactiveAnimator.startAnimation()
-            }
-            else {
+                
+            } else {
                 interactiveAnimator.stopAnimation(true)
                 interactiveAnimator.finishAnimation(at: .start)
                 interactiveAnimator.addAnimations { [weak self] in
@@ -222,12 +207,9 @@ class HorizontalSwypeView: UIView {
                     guard let weakSelf = self else {return}
                     if weakSelf.isLeftSwipe {
                         self?.secondaryImageView.transform = CGAffineTransform(translationX: UIScreen.main.bounds.width, y: 0)
-                        //self?.secondaryImageView.alpha = 0
                     }
                     if weakSelf.isRightSwipe {
-                        //self?.secondaryImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
                         self?.secondaryImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-                        //self?.secondaryImageView.alpha = 0
                     }
                 }
                 
@@ -237,7 +219,6 @@ class HorizontalSwypeView: UIView {
                     self?.secondaryImageView.transform = .identity
                     self?.secondaryImageView.alpha = 0
                 })
-                
                 interactiveAnimator.startAnimation()
             }
         default:
@@ -245,13 +226,11 @@ class HorizontalSwypeView: UIView {
         }
     }
     
-    
     func setImages(images: [UIImage]) {
         self.images = images
         if self.images.count > 0 {
             self.mainImageView.image = self.images.first
         }
         customPageView.numberOfPages = self.images.count
-        
     }
 }

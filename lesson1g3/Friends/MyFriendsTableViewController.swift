@@ -9,7 +9,8 @@ import UIKit
 let myCustomTableViewCellReuse = "MyCustomTableViewCell"
 let fromFriendsToPhotoSegue = "fromFriendsToPhoto"
 let photoCollectionViewControllerID = "PhotoCollectionViewController"
-class MyFriendsTableViewController: UITableViewController, SwypeVCDelegate {
+
+class MyFriendsTableViewController: UITableViewController {
     
     func fillGallery(of user: User) {
         images = user.userPhotoGallery
@@ -20,8 +21,6 @@ class MyFriendsTableViewController: UITableViewController, SwypeVCDelegate {
     var firstNameLettersArray = [String]()
     var usersDict = [String: [User]]()
     var userSectionTitles = [String]()
-
-    
     
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var myFriends: UITableView!
@@ -44,7 +43,6 @@ class MyFriendsTableViewController: UITableViewController, SwypeVCDelegate {
         fillGallery(of: user)
         performSegue(withIdentifier: "fromFriendsToSwypeGallery", sender: user)
         removePopUpView()
-        
     }
     
     @IBAction func cancelButton(_ sender: Any) {
@@ -71,7 +69,6 @@ class MyFriendsTableViewController: UITableViewController, SwypeVCDelegate {
         return userValues.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: myCustomTableViewCellReuse, for: indexPath) as? MyCustomTableViewCell
         else {return UITableViewCell()}
@@ -96,11 +93,6 @@ class MyFriendsTableViewController: UITableViewController, SwypeVCDelegate {
                   let destination = segue.destination as? PhotoCollectionViewController
             else {return}
             destination.user = user
-            
-        }
-        if segue.identifier == "fromFriendsToSwypeGallery" {
-            let destinationVC = segue.destination as! SwypePhotoGalleryViewController
-            destinationVC.delegate = self
         }
     }
     
@@ -122,9 +114,7 @@ class MyFriendsTableViewController: UITableViewController, SwypeVCDelegate {
         header.tintColor = UIColor.init(white: 1.5, alpha: 0.5)
     }
     
-    
     func addPopUpView () {
-        
         self.tableView.addSubview(popUpView)
         popUpView.center = self.tableView.center
         popUpView.layer.cornerRadius = 10
@@ -137,7 +127,6 @@ class MyFriendsTableViewController: UITableViewController, SwypeVCDelegate {
     }
     
     func removePopUpView() {
-        
         UIView.animate(withDuration: 0.3, animations: {
             self.popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.popUpView.alpha = 0
@@ -147,7 +136,6 @@ class MyFriendsTableViewController: UITableViewController, SwypeVCDelegate {
     }
     
     func createUsersDictionary() {
-        
         var usersArray = [User]()
         for user in DataStorage.shared.usersArray {
             usersArray.append(user)

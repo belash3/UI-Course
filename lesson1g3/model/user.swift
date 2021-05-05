@@ -24,10 +24,8 @@ struct User {
 func setNewUser(userNumber: Int, name: String, age: UInt, gender: Gender) -> User {
     var newUser = User(name: name, gender: gender)
     newUser.age = age
-    
     var imageName = String(userNumber) + "_1"
     newUser.avatar = UIImage(named: imageName)
-    
     for index in 2...5 {
         imageName = String(userNumber) + "_" + String(index)
         if let image = UIImage(named: imageName) {

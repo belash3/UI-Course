@@ -9,7 +9,6 @@ import UIKit
 let myCustomTableViewCellIdentifier = "MyCustomTableViewCell"
 class MyCommunitiesTableView: UITableViewController {
     
-
     @IBOutlet weak var myCommunitiesTableView: UITableView!
     
     override func viewDidAppear(_ animated: Bool) {
@@ -20,10 +19,6 @@ class MyCommunitiesTableView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "MyCustomTableViewCell", bundle: nil), forCellReuseIdentifier: myCustomTableViewCellReuse)
-
-    
-    
-
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -36,9 +31,7 @@ class MyCommunitiesTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: myCustomTableViewCellReuse, for: indexPath) as? MyCustomTableViewCell else {return UITableViewCell()}
-        
         cell.configureGroup(group: DataStorage.shared.myGroups[indexPath.row])
-
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
