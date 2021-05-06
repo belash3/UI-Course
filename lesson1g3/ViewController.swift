@@ -17,8 +17,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var loadLabel2: UILabel!
     @IBOutlet weak var loadLabel3: UILabel!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginTextField.backgroundColor = UIColor.white
+        passwordTextField.backgroundColor = UIColor.white
     }
     
     func showAlert(alertText: String){

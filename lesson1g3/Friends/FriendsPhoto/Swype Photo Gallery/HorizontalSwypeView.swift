@@ -195,7 +195,7 @@ class HorizontalSwypeView: UIView {
             }
             var translation = recognizer.translation(in: self.view)
             if translation.x < 0 {translation.x = -translation.x}
-            if (translation.x / (UIScreen.main.bounds.width)) > 0.5  {
+            if (translation.x / (UIScreen.main.bounds.width)) > 0.2  {
                 interactiveAnimator.startAnimation()
                 
             } else {
