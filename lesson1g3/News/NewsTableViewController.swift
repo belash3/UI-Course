@@ -13,6 +13,7 @@ class NewsTableViewController: UITableViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.delegate = self
         let nibFile = UINib(nibName: "NewsTableViewCell", bundle: nil)
         self.tableView.register(nibFile, forCellReuseIdentifier: newsTableViewCellReuse)
         tableView.rowHeight = UITableView.automaticDimension
@@ -31,5 +32,16 @@ class NewsTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: newsTableViewCellReuse, for: indexPath) as? NewsTableViewCell else {return UITableViewCell()}
         cell.configureNews(news: DataStorage.shared.newsArray[indexPath.row])
         return cell
+    }
+}
+
+extension NewsTableViewController: UINavigationControllerDelegate{
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if operation == .push {
+            return PushAnimation()
+        } else if operation == .pop {
+            return PushAnimation()
+        } else {return PopAnimation()}
     }
 }

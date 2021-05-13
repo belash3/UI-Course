@@ -20,6 +20,7 @@ class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDele
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "MyCustomTableViewCell", bundle: nil), forCellReuseIdentifier: myCustomTableViewCellReuse)
         reccSearchBar.delegate = self
+        self.navigationController?.delegate = self
     }
     
     @IBAction func pressAddCmntyBtn(_ sender: Any) {
@@ -69,7 +70,7 @@ class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDele
     
     func addPopUpView () {
         self.tableView.addSubview(popUpView)
-        popUpView.center = self.tableView.center
+        popUpView.layer.position = CGPoint(x: self.tableView.frame.size.width/2, y: self.tableView.frame.size.height/2)
         popUpView.layer.cornerRadius = 10
         popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         popUpView.alpha = 0
@@ -103,3 +104,15 @@ class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDele
         self.tableView.reloadData()
     }
 }
+
+extension ReccCommunitiesTableViewController: UINavigationControllerDelegate{
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if operation == .push {
+            return PushAnimation()
+        } else if operation == .pop {
+            return PopAnimation()
+        } else {return PopAnimation()}
+    }
+}
+

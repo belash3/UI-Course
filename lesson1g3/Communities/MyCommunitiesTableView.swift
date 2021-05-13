@@ -19,6 +19,7 @@ class MyCommunitiesTableView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "MyCustomTableViewCell", bundle: nil), forCellReuseIdentifier: myCustomTableViewCellReuse)
+        self.navigationController?.delegate = self
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,5 +42,16 @@ class MyCommunitiesTableView: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         DataStorage.shared.myGroups.remove(at: indexPath.row)
         self.tableView.reloadData()
+    }
+}
+
+extension MyCommunitiesTableView: UINavigationControllerDelegate{
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if operation == .push {
+            return PushAnimation()
+        } else if operation == .pop {
+            return PopAnimation()
+        } else {return PopAnimation()}
     }
 }

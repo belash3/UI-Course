@@ -21,6 +21,9 @@ class PhotoCollectionViewController: UICollectionViewController {
         guard let _ = user,
               let array = user?.userPhotoGallery else {return}
         photoArray = array
+        self.navigationController?.delegate = self
+        (self.navigationController as? MyNavigationViewControllerWithAnimations)?.interactiveTransition.viewController = self
+    
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -42,5 +45,16 @@ extension PhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 300, height: 300)
+    }
+}
+
+extension PhotoCollectionViewController: UINavigationControllerDelegate{
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if operation == .push {
+            return PushAnimation()
+        } else if operation == .pop {
+            return PopAnimation()
+        } else {return PopAnimation()}
     }
 }

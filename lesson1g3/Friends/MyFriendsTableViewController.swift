@@ -55,6 +55,8 @@ class MyFriendsTableViewController: UITableViewController {
         self.tableView.register(nibFile, forCellReuseIdentifier: myCustomTableViewCellReuse)
         createUsersDictionary()
         DataStorage.shared.usersArray.sort(by: {$0.name < $1.name})
+        self.navigationController?.delegate = self
+        (self.navigationController as? MyNavigationViewControllerWithAnimations)?.interactiveTransition.viewController = self
     }
     
     // MARK: - Table view data source
@@ -116,7 +118,7 @@ class MyFriendsTableViewController: UITableViewController {
     
     func addPopUpView () {
         self.tableView.addSubview(popUpView)
-        popUpView.center = self.tableView.center
+        popUpView.layer.position = CGPoint(x: self.tableView.frame.size.width/2, y: self.tableView.frame.size.height/2)
         popUpView.layer.cornerRadius = 10
         popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         popUpView.alpha = 0
@@ -155,4 +157,14 @@ class MyFriendsTableViewController: UITableViewController {
     }
 }
 
+extension MyFriendsTableViewController: UINavigationControllerDelegate{
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if operation == .push {
+            return PushAnimation()
+        } else if operation == .pop {
+            return PopAnimation()
+        } else {return PopAnimation()}
+    }
+}
 

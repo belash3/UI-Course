@@ -15,5 +15,20 @@ class SwypePhotoGalleryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         galleryView.setImages(images: images)
+        self.navigationController?.delegate = self
+    }
+}
+extension SwypePhotoGalleryViewController: UINavigationControllerDelegate{
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if operation == .push {
+            return PushAnimation()
+        //} else if operation == .pop {
+       //     return PopAnimation()
+        } else {
+            return PopAnimation()
+            
+        }
     }
 }
