@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uZA-k9-v3E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -128,6 +128,7 @@
                             <constraint firstItem="Qtv-xs-jcF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="u1U-5k-7dn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BPD-oK-ClP"/>
                     <connections>
                         <outlet property="loadLabel1" destination="MKg-52-Uj4" id="9bY-N6-HvS"/>
                         <outlet property="loadLabel2" destination="Kk4-Y7-94r" id="MhG-np-IwI"/>
@@ -139,22 +140,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-749.27536231884062" y="79.6875"/>
+            <point key="canvasLocation" x="-946" y="80"/>
         </scene>
         <!--MyCommunities-->
         <scene sceneID="C0Q-F6-4GX">
             <objects>
                 <tableViewController title="MyCommunities" id="r8s-dA-Vmo" customClass="MyCommunitiesTableView" customModule="lesson1g3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Toe-nf-OSH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Toe-nf-OSH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ZFZ-Qe-xtS">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZFZ-Qe-xtS" id="mlb-DB-TLd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -180,7 +181,7 @@
         <scene sceneID="tM2-kX-6iz">
             <objects>
                 <tableViewController id="M66-sK-zzf" customClass="ReccCommunitiesTableViewController" customModule="lesson1g3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="reccTWid" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mSt-vf-eXT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="reccTWid" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mSt-vf-eXT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -191,10 +192,10 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1Fm-iE-bQk" customClass="MyCustomTableViewCell" customModule="lesson1g3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="68.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="68.5" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Fm-iE-bQk" id="LSv-c6-Hhp">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -274,16 +275,16 @@
         <scene sceneID="YDL-gY-BYr">
             <objects>
                 <tableViewController id="ZRu-Zo-n5U" customClass="MyFriendsTableViewController" customModule="lesson1g3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0N0-av-fRO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0N0-av-fRO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WZY-KQ-sUd" customClass="MyCustomTableViewCell" customModule="lesson1g3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WZY-KQ-sUd" id="KWq-ak-g4k">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -297,6 +298,7 @@
                         <outlet property="popUpView" destination="ANs-vi-1nB" id="N2R-Lq-WYh"/>
                         <outlet property="swypeGlryBtn" destination="ymp-ZI-jyn" id="KiG-Oz-fGL"/>
                         <segue destination="kip-Hz-7Ht" kind="show" identifier="fromFriendsToPhoto" id="C8L-Jq-x1z"/>
+                        <segue destination="7sx-tA-yl8" kind="show" identifier="fromFriendsToSwypeGallery" id="eVn-qX-Gmb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyW-G1-grY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -335,7 +337,6 @@
                             </state>
                             <connections>
                                 <action selector="swypeGlryBtn:" destination="ZRu-Zo-n5U" eventType="touchUpInside" id="BJk-Ce-9c2"/>
-                                <segue destination="7sx-tA-yl8" kind="show" identifier="fromFriendsToSwypeGallery" id="kkM-f0-9HX"/>
                             </connections>
                         </button>
                     </subviews>
@@ -417,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jy-IJ-Gat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2593" y="80"/>
+            <point key="canvasLocation" x="2593" y="175"/>
         </scene>
         <!--News-->
         <scene sceneID="Ohk-Sx-6eF">
@@ -465,7 +466,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JtY-1B-cXg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2593" y="756"/>
+            <point key="canvasLocation" x="2593" y="817"/>
         </scene>
         <!--My Friends-->
         <scene sceneID="8DS-ea-HYJ">
