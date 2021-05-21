@@ -13,6 +13,7 @@ class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDele
     @IBOutlet weak var popUpLabel: UILabel!
     @IBOutlet weak var popUpView: UIView!
     
+    var blurView = UIView()
     var index: IndexPath = []
     var filtredData = [Group](DataStorage.shared.recommendedGroups)
     
@@ -70,23 +71,35 @@ class ReccCommunitiesTableViewController: UITableViewController, UISearchBarDele
     
     func addPopUpView () {
         self.tableView.addSubview(popUpView)
-        popUpView.layer.position = CGPoint(x: self.tableView.frame.size.width/2, y: self.tableView.frame.size.height/2)
+        popUpView.layer.position = CGPoint(x: self.tableView.frame.size.width/2, y: self.tableView.frame.size.height/2.5)
         popUpView.layer.cornerRadius = 10
-        popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        popUpView.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
         popUpView.alpha = 0
-        UIView.animate(withDuration: 0.5) {
-            self.popUpView.alpha = 1
+        
+        let darkBlur = UIBlurEffect(style: UIBlurEffect.Style.regular)
+        blurView = UIVisualEffectView(effect: darkBlur)
+        blurView.frame = self.tableView.frame
+        blurView.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+            self.popUpView.alpha = 0.8
             self.popUpView.transform = CGAffineTransform.identity
-        }
+            self.tableView.addSubview(self.blurView)
+            self.blurView.alpha = 1
+            self.tableView.bringSubviewToFront(self.popUpView)
+        }, completion: nil)
     }
     
+    
     func removePopUpView() {
-        UIView.animate(withDuration: 0.5,
+        UIView.animate(withDuration: 0.3,
                        animations: {
                         self.popUpView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
                         self.popUpView.alpha = 0
+                        self.blurView.alpha = 0
                        }) {(success: Bool) in
             self.popUpView.removeFromSuperview()
+            self.blurView.removeFromSuperview()
+            
         }
     }
     

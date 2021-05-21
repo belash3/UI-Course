@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uZA-k9-v3E">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -214,38 +214,38 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMy-7T-viy">
-                            <rect key="frame" x="94.5" y="114" width="61" height="36"/>
+                            <rect key="frame" x="89" y="109" width="72" height="36"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="Cancel">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Отмена">
+                                <color key="titleColor" red="0.035294115539999997" green="0.48627454040000001" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <connections>
                                 <action selector="pressCancelBtn:" destination="M66-sK-zzf" eventType="touchUpInside" id="wnI-cB-lbg"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffz-h7-dlz">
-                            <rect key="frame" x="54" y="58" width="142" height="36"/>
+                            <rect key="frame" x="16.5" y="58" width="217" height="36"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="Add Community">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Вступить в сообщество">
+                                <color key="titleColor" red="0.035294115539999997" green="0.48627454040000001" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <connections>
                                 <action selector="pressAddCmntyBtn:" destination="M66-sK-zzf" eventType="touchUpInside" id="aga-wV-651"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpU-on-MvC">
-                            <rect key="frame" x="73" y="0.0" width="94" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpU-on-MvC">
+                            <rect key="frame" x="101" y="26" width="48" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="faj-Xy-kYD"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <constraints>
-                        <constraint firstItem="faj-Xy-kYD" firstAttribute="top" secondItem="jpU-on-MvC" secondAttribute="top" id="4hs-V8-For"/>
-                        <constraint firstItem="faj-Xy-kYD" firstAttribute="bottom" secondItem="hMy-7T-viy" secondAttribute="bottom" id="4ms-zB-4yc"/>
-                        <constraint firstItem="hMy-7T-viy" firstAttribute="top" secondItem="ffz-h7-dlz" secondAttribute="bottom" constant="20" id="Oz7-JF-oMr"/>
+                        <constraint firstItem="faj-Xy-kYD" firstAttribute="bottom" secondItem="hMy-7T-viy" secondAttribute="bottom" constant="5" id="4ms-zB-4yc"/>
+                        <constraint firstItem="hMy-7T-viy" firstAttribute="top" secondItem="ffz-h7-dlz" secondAttribute="bottom" constant="15" id="Oz7-JF-oMr"/>
+                        <constraint firstItem="jpU-on-MvC" firstAttribute="top" secondItem="faj-Xy-kYD" secondAttribute="top" constant="15" id="Y6Y-G5-fRS"/>
                         <constraint firstItem="jpU-on-MvC" firstAttribute="centerX" secondItem="faj-Xy-kYD" secondAttribute="centerX" id="aIi-pW-8nZ"/>
                         <constraint firstItem="hMy-7T-viy" firstAttribute="centerX" secondItem="faj-Xy-kYD" secondAttribute="centerX" id="dJo-yW-juh"/>
                         <constraint firstItem="ffz-h7-dlz" firstAttribute="centerX" secondItem="faj-Xy-kYD" secondAttribute="centerX" id="vEm-nr-aeu"/>
@@ -307,9 +307,9 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIC-CQ-TGC">
-                            <rect key="frame" x="101" y="111" width="48" height="30"/>
-                            <state key="normal" title="Cancel">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="97" y="111" width="56" height="30"/>
+                            <state key="normal" title="Отмена">
+                                <color key="titleColor" red="0.035294115539999997" green="0.48627454040000001" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <connections>
                                 <action selector="cancelButton:" destination="ZRu-Zo-n5U" eventType="touchUpInside" id="yOI-Ny-5a7"/>
@@ -318,22 +318,22 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdt-lp-HYM">
                             <rect key="frame" x="50" y="15" width="150" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rv-7G-PSq">
                             <rect key="frame" x="25" y="51" width="200" height="30"/>
-                            <state key="normal" title="Photo gallery">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Фотографии">
+                                <color key="titleColor" red="0.035294115539999997" green="0.48627454040000001" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <connections>
                                 <action selector="shwPhotoGllryButton:" destination="ZRu-Zo-n5U" eventType="touchUpInside" id="HG9-ac-Tu1"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymp-ZI-jyn">
-                            <rect key="frame" x="55" y="81" width="140" height="30"/>
-                            <state key="normal" title="Swype photo gallery">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="50.5" y="81" width="149" height="30"/>
+                            <state key="normal" title="Галерея фотографий">
+                                <color key="titleColor" red="0.035294115539999997" green="0.48627454040000001" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <connections>
                                 <action selector="swypeGlryBtn:" destination="ZRu-Zo-n5U" eventType="touchUpInside" id="BJk-Ce-9c2"/>
@@ -341,7 +341,7 @@
                         </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="Cj9-zr-3oC"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="0.80285395408163263" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <constraints>
                         <constraint firstItem="ymp-ZI-jyn" firstAttribute="centerX" secondItem="Cj9-zr-3oC" secondAttribute="centerX" id="2fJ-lw-hqh"/>
                         <constraint firstItem="ymp-ZI-jyn" firstAttribute="top" secondItem="8rv-7G-PSq" secondAttribute="bottom" id="5S4-mg-bZP"/>
