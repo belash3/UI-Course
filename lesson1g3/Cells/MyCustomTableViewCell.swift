@@ -43,11 +43,15 @@ class MyCustomTableViewCell: UITableViewCell {
         myBackview.layer.shadowRadius = shadowRadius
         myBackview.layer.shadowOffset = CGSize.zero        
         myImageView.layer.cornerRadius = myImageView.frame.size.width / 2
+        let tap = UITapGestureRecognizer(target: self, action: #selector(MyCustomTableViewCell.tappedMe))
+        myImageView.addGestureRecognizer(tap)
+        myImageView.isUserInteractionEnabled = true
+        //myImageView.layer.cornerRadius = 20
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        avatarAnimate()
+        //avatarAnimate()
     }
     
     func avatarAnimate() {
@@ -87,6 +91,17 @@ class MyCustomTableViewCell: UITableViewCell {
             myImageView.image = image
         }
         saveGroup = group
+    }
+   
+    @objc func tappedMe(){
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 0,
+                       options: [],
+                       animations: {
+                        self.myImageView.bounds.size.width += self.myImageView.bounds.size.width
+        })
     }
 }
 
