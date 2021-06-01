@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uZA-k9-v3E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YjN-Yh-g18">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -141,6 +141,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-946" y="80"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="rS1-FI-BjB">
+            <objects>
+                <viewController id="YjN-Yh-g18" customClass="LoginViewController" customModule="lesson1g3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f9v-aU-bLy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-HY-aTF" userLabel="Login Page">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="naG-co-TSz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="naG-co-TSz" firstAttribute="trailing" secondItem="IRc-HY-aTF" secondAttribute="trailing" id="5IV-sZ-VBM"/>
+                            <constraint firstItem="IRc-HY-aTF" firstAttribute="leading" secondItem="naG-co-TSz" secondAttribute="leading" id="QuU-t6-RNR"/>
+                            <constraint firstItem="IRc-HY-aTF" firstAttribute="top" secondItem="naG-co-TSz" secondAttribute="top" id="ckT-vt-A2h"/>
+                            <constraint firstItem="naG-co-TSz" firstAttribute="bottom" secondItem="IRc-HY-aTF" secondAttribute="bottom" id="lDj-DY-8fF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginPage" destination="IRc-HY-aTF" id="TvQ-56-qJk"/>
+                        <segue destination="uZA-k9-v3E" kind="presentation" identifier="fromLoginPageToMainMenuSegue" modalPresentationStyle="fullScreen" id="zXB-dN-eIT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSQ-UA-NTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-946" y="793"/>
         </scene>
         <!--MyCommunities-->
         <scene sceneID="C0Q-F6-4GX">
@@ -491,6 +526,7 @@
         <scene sceneID="vB0-HV-nAX">
             <objects>
                 <tabBarController title="My profile" id="uZA-k9-v3E" customClass="TabBarController" customModule="lesson1g3" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kv5-CV-6EE"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uon-RW-Vk9" customClass="MyUITabBar" customModule="lesson1g3" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -507,6 +543,9 @@
             <point key="canvasLocation" x="35" y="80"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zXB-dN-eIT"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
